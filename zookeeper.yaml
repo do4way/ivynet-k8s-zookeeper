@@ -66,8 +66,8 @@ spec:
         image: gcr.io/ivynet-containers/zookeeper:3.4.9
         resources:
           requests:
-            memory: "1Gi"
-            cpu: "500m"
+            memory: "256Mi"
+            cpu: "250m"
         ports:
         - containerPort: 2181
           name: client
@@ -138,6 +138,9 @@ spec:
         volumeMounts:
         - name: datadir
           mountPath: /var/lib/zookeeper
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
   volumeClaimTemplates:
   - metadata:
       name: datadir
