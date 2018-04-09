@@ -20,7 +20,7 @@ kind: ConfigMap
 metadata:
   name: zk-cm
 data:
-  jvm.heap: "512M"
+  jvm.heap: "1G"
   tick: "2000"
   init: "10"
   sync: "5"
@@ -66,7 +66,7 @@ spec:
         image: gcr.io/ivynet-containers/zookeeper:3.4.9
         resources:
           requests:
-            memory: "256Mi"
+            memory: "1500Mi"
             cpu: "250m"
         ports:
         - containerPort: 2181
