@@ -60,6 +60,8 @@ spec:
                     values:
                     - zk
               topologyKey: "kubernetes.io/hostname"
+      nodeSelector:
+          beta.kubernetes.io/instance-type: n1-highmem-2
       containers:
       - name: k8szk
         imagePullPolicy: Always
